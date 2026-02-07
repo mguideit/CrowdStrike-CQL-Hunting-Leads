@@ -5,22 +5,15 @@ This matrix provides a centralized view of all hunting leads available in this r
 ---
 
 ## 📊 Coverage Summary
-| Tactic | Entry Count |
-| :--- | :--- |
-| Reconnaissance | 0 |
-| Resource Development | 0 |
-| Initial Access | 0 |
-| Execution | 1 |
-| Persistence | 0 |
-| Privilege Escalation | 0 |
-| Defense Evasion | 1 |
-| Credential Access | 0 |
-| Discovery | 0 |
-| Lateral Movement | 0 |
-| Collection | 0 |
-| Command and Control | 1 |
-| Exfiltration | 0 |
-| Impact | 0 |
+| Tactic | Count | | Tactic | Count |
+| :--- | :---: | --- | :--- | :---: |
+| 🔍 Reconnaissance | `0` | | 🔑 Credential Access | `0` |
+| 🏗️ Resource Dev | `0` | | 📡 Discovery | `0` |
+| 🎟️ Initial Access | `0` | | 🏃 Lateral Movement | `0` |
+| 🚀 **Execution** | **`1`** | | 📦 Collection | `0` |
+| ⚓ Persistence | `0` | | 🚩 **Command & Control** | **`1`** |
+| 📈 Privilege Esc | `0` | | 📤 Exfiltration | `0` |
+| 🛡️ **Defense Evasion** | **`1`** | | 💥 Impact | `0` |
 
 ---
 

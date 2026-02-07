@@ -38,7 +38,7 @@ defineTable(query={
 | rename(field="UserName", as="NewUser")
 }, include=[UserCreationTimestamp, ComputerName, Tree, NewUser, RpcClientProcessId], name="UserAccountCreatedT")
 | #event_simpleName = ProcessRollup2
-| match(table="UserAccountCreatedT", field=[ComputerName, TargetProcessId], column=[ComputerName, RpcClientProcessId])
+| match(table="UserAccountCreatedT", field=[ComputerName, TargetProcessId], column=[ComputerName, RpcClientProcessId], nrows=max)
 | rename(field="UserName", as="Creator")
 | groupBy([UserCreationTimestamp, ComputerName, Creator, Tree, ParentBaseFileName, FileName, CommandLine, NewUser])
 ```

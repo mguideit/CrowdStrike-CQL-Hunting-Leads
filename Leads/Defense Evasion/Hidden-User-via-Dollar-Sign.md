@@ -30,8 +30,7 @@ Any user account created that ends with a dollar sign ($) and is not created by 
 
 ```cql
 defineTable(query={
-#repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
-| #event_simpleName = UserAccountCreated
+#event_simpleName = UserAccountCreated
 | UserName = /\$$/i
 | formatTime(format="%Y-%m-%d %H:%M:%S", as="UserCreationTimestamp", timezone="Africa/Cairo")
 | format("https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%25s:%25s&investigate=true&_cid=%25s", field=["aid","RpcClientProcessId","cid"], as="Tree")

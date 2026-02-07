@@ -21,8 +21,7 @@ If this technique is used, we expect to observe:
 * **Muhammad Hassoub**
 
 #### References
-* [CrowdStrike Blog: Stopping the Hinder Boot-Time Evasion](https://www.crowdstrike.com/blog/stopping-the-hinder-boot-time-evasion/)
-* [Microsoft: Service Load Order Groups Documentation](https://learn.microsoft.com/en-us/windows-hardware/drivers/install/specifying-service-load-order)
+* [EDRStartupHinder Disables Antivirus and EDR Protections](https://cyberpress.org/edrstartuphinder-disables/)
 
 #### Tags
 `#Hunting` `#DefenseEvasion` `#EDR-Evasion` `#BootSighting` `#ServiceAbuse` `#Falcon` `#LogScale`

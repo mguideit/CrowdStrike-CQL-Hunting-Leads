@@ -24,7 +24,7 @@ If this technique is used, we expect to observe:
 * [EDRStartupHinder Disables Antivirus and EDR Protections](https://cyberpress.org/edrstartuphinder-disables/)
 
 #### Tags
-`#Hunting` `#DefenseEvasion` `#EDR-Evasion` `#BootSighting` `#ServiceAbuse` `#Falcon` `#LogScale`
+`#Hunting` `#EDR-Evasion`
 
 ---
 

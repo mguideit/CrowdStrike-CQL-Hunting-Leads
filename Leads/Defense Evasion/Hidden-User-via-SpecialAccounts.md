@@ -36,7 +36,7 @@ defineTable(query={
 | formatTime(format="%Y-%m-%d %H:%M:%S", as="RegTimestamp", timezone="Africa/Cairo")
 }, include=[RegTimestamp, ComputerName, Tree, ContextProcessId, RegObjectName, RegValueName, RegOperationType], name="RegSystemConfigValueUpdateT")
 | #event_simpleName = ProcessRollup2
-| match(table="RegSystemConfigValueUpdateT", field=[ComputerName, TargetProcessId], column=[ComputerName, ContextProcessId])
+| match(table="RegSystemConfigValueUpdateT", field=[ComputerName, TargetProcessId], column=[ComputerName, ContextProcessId], nrows=max)
 | groupBy([RegTimestamp, ComputerName, UserName, Tree, ParentBaseFileName, FileName, CommandLine, RegObjectName, RegValueName, RegOperationType])
 ```
 ---

@@ -34,7 +34,7 @@ Hunting for impacket-smbexec:
 | WritingProcessName = "services.exe"
 | join(query={ #event_simpleName = FileDeleteInfo | rename(field="ContextProcessId", as="WritingProcessId") | FileDeleteTime := @timestamp
 | join(
-query={#event_simpleName = ScriptFileWrittenInfo | #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38 | ScriptContent = />/i | ScriptFileWriteTime := @timestamp},
+query={#event_simpleName = ScriptFileWrittenInfo | ScriptContent = />/i | ScriptFileWriteTime := @timestamp},
 field=[FileName],
 include=[ScriptFileWriteTime, #event_simpleName, ScriptContent, TargetFileName, FileFormatString]
 )

@@ -3,8 +3,8 @@
 #### MITRE ATT&CK Mapping
 | Tactic | Technique ID | Title |
 | :--- | :--- | :--- |
-| Defense Evasion | [T1027](https://attack.mitre.org/techniques/T1027/) | PowerShell |
-| Execution | [T1027](https://attack.mitre.org/techniques/T1027/) | PowerShell |
+| Defense Evasion | [T1027](https://attack.mitre.org/techniques/T1027/) | Obfuscated Files or Information |
+| Execution | [T1059.001]([https://attack.mitre.org/techniques/T1027/](https://attack.mitre.org/techniques/T1059/001/)) | PowerShell |
 
 #### Hypothesis
 Adversaries obufusctae the powershell commands in order to escape the detection. This query will detect encoded powershell based on the parameters passed during process creation. This query will also work if the PowerShell executable is renamed or tampered with since detection is based solely on a regex of the launch string.

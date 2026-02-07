@@ -4,6 +4,7 @@
 | Tactic | Technique ID | Title |
 | :--- | :--- | :--- |
 | Defense Evasion | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control |
+| Privilege Escalation | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control |
 
 #### Hypothesis
 An adversary may invoke the ICMLuaUtil auto‑elevated COM interface to bypass User Account Control (UAC), allowing processes to execute with elevated privileges without user interaction. This behavior can be abused to execute malicious code stealthily during post‑exploitation.
@@ -43,7 +44,7 @@ defineTable(query={
 | #event_simpleName = ProcessRollup2
 //Match the 'RpcClientProcessId' from dllhost back to the 'TargetProcessId' of the process that called it
 //This identifies the script or binary that triggered the UAC bypass
-| match(table="DLLHostT", field=[ComputerName, TargetProcessId], column=[ComputerName, RpcClientProcessId])
+| match(table="DLLHostT", field=[ComputerName, TargetProcessId], column=[ComputerName, RpcClientProcessId], nrows=max)
 | rename(field="CommandLine", as="CallerProcess")
 | rename(field="ParentBaseFileName", as="ParentOfCallerProcess")
 //Create a second link for the Caller process tree to see what happened BEFORE the bypass

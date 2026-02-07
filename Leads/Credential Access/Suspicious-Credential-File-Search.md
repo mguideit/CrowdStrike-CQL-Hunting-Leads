@@ -27,7 +27,6 @@ If such commands appear in CommandHistory or CommandLine, especially when execut
 
 ```cql
 event_platform = "Win" #event_simpleName = /CommandHistory|ProcessRollup2/
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | (CommandHistory = /(ls|Get-ChildItem)\s.*-(R|Recurse)\s.+pass/i or CommandLine = /findstr\s+\/si pass/i)
 | CommandHistory := splitString(field=CommandHistory,by="¶")
 | CommandHistory := concatArray("CommandHistory", separator="\n")

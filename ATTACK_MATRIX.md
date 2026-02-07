@@ -1,6 +1,6 @@
 # MITRE ATT&CK® Coverage Matrix
 
-This matrix provides a centralized view of all hunting leads available in this repository. Use the links in the Lead Name column to jump directly to the technical documentation and CQL logic.
+This matrix provides a centralized view of all hunting leads available in this repository. Use the links in the **Lead Name** column to jump directly to the technical documentation and CQL logic.
 
 ## 📊 Coverage Summary
 | Tactic | Count | Tactic | Count |

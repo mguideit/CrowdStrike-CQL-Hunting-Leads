@@ -28,7 +28,6 @@ Attackers performing reconnaissance, staging, or pre-exfiltration scanning often
 ```cql
 defineTable(query={
 #event_simpleName = /FileOpenInfo|RansomwareOpenFile/i
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | format("https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%25s:%25s&investigate=true&_cid=%25s", field=["aid","ContextProcessId","cid"], as="Tree")
 | TargetFileName = /ZZZZZ.+\.doc|XORXOR.+\.doc/i
 | formatTime(format="%Y-%m-%d %H:%M:%S", as="FileAccessTimeStamp", timezone="Africa/Cairo")

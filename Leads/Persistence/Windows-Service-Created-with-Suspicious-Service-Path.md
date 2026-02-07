@@ -7,7 +7,7 @@
 | Privilege Escalation | [T1543.003](https://attack.mitre.org/techniques/T1543/003/) | Windows Service |
 
 #### Hypothesis
-This analytic detects creation of Windows Services with binaries in uncommon folders, which may indicate lateral movement, remote code execution, or persistence.
+Adversaries may create or modify Windows services to achieve persistence, enable remote code execution, or facilitate lateral movement. Services that reference binaries stored in uncommon or non-standard folders (outside typical system paths like C:\Windows\System32) can indicate suspicious activity. Detection focuses on identifying newly created services whose executable paths deviate from standard conventions, which may suggest deployment of malicious binaries or unauthorized service manipulation.
 
 #### Platform
 * **CrowdStrike Falcon**
@@ -16,7 +16,7 @@ This analytic detects creation of Windows Services with binaries in uncommon fol
 * **Muhammad Hassoub**
 
 #### References
-* 
+* [Splunk](https://research.splunk.com/endpoint/429141be-8311-11eb-adb6-acde48001122/)
 
 #### Tags
 `#Hunting`
@@ -36,11 +36,9 @@ This analytic detects creation of Windows Services with binaries in uncommon fol
 | join(
 query={
 #event_simpleName=CreateService
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | ServiceImagePath = *
-| ServiceImagePath != /\\Windows|\\Program File|\\Programdata\\|\%systemroot\%|System32|Development_Applications|SysWOW64|mysql|Packages\\Plugins|azagent|bin\\httpd|ROGRA\~|Marketbeat|FixServices|DistributionManager|RuleEngineCOFServices|DSS\\|SoftwareAG|EFG|Brokerage|\\HKF|D:\\|E:\\|WinPcap|(sys)$|BirtReporter|kavremover/i
-| ServiceDisplayName != /EFG|ALSysIO|KL Deployment|TDKLIMIT|SysmonDrv|nginx/i
-| ComputerName != /EGY-OPSWAT01/i
+| ServiceImagePath != /\\Windows|\\Program File|\\Programdata\\|\%systemroot\%|System32|SysWOW64|mysql|Packages\\Plugins|azagent|bin\\httpd|ROGRA\~|FixServices|DistributionManager|RuleEngineCOFServices|DSS\\|SoftwareAG|\\HKF|D:\\|E:\\|WinPcap|(sys)$|BirtReporter|kavremover/i
+| ServiceDisplayName != /ALSysIO|KL Deployment|TDKLIMIT|SysmonDrv|nginx/i
 },
 field=[ComputerName, RpcClientProcessId],
 include=[ServiceDisplayName, ServiceImagePath, ServiceStart, RpcClientProcessId]

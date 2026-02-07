@@ -26,11 +26,10 @@ If a non-domain-controller host or non-standard user account (i.e., one without 
 
 ```cql
 #event_simpleName=DCSyncAttempted
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
-| ComputerName != /WEBSITE/i
-| UserName != /\$|spointadmins|itsvc_rpad/i
-| not in(field="RemoteIP", values=["10.0.54.82", "192.168.150.129", "10.255.102.50", "10.0.55.48"])
-| not (RemoteIP = "10.255.102.40" and UserName = "itsvc_rpad")
+// Exclude authorized usernames
+| UserName != /\$|benign/i
+// Exclude DCs and authorized IPs
+| !in(field="RemoteIP", values=["10.0.0.5", "10.0.0.50"])
 | formatTime(format="%m/%d/%Y %H:%M:%S %a", timezone="Africa/Cairo", as="TimeStamp")
 | test(LocalIP != RemoteIP)
 | table([TimeStamp, ComputerName, LocalIP, SubjectDomainNameEtw, RemoteIP, UserName])

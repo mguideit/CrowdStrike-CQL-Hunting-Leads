@@ -39,7 +39,6 @@ Allows persistent execution of malicious code as a background service, often wit
 | join(
 query={
 #event_simpleName=CreateService
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | ServiceImagePath = *
 | ServiceImagePath != /\\Windows|\\Program File|\\Programdata\\|\%systemroot\%|System32|Development_Applications|SysWOW64|mysql|Packages\\Plugins|azagent|bin\\httpd|ROGRA\~|Marketbeat|FixServices|DistributionManager|RuleEngineCOFServices|DSS\\|SoftwareAG|EFG|Brokerage|\\HKF|D:\\|E:\\|WinPcap|(sys)$|BirtReporter|kavremover/i
 | ServiceDisplayName != /EFG|ALSysIO|KL Deployment|TDKLIMIT|SysmonDrv|nginx/i

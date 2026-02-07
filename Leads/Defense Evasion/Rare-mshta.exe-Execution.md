@@ -27,7 +27,6 @@ Adversaries may use mshta.exe to run malicious scripts or bypass whitelisting. S
 ```cql
 event_platform=Win #event_simpleName=ProcessRollup2
 | FileName=mshta.exe
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | rename(field="ParentProcessId", as="PPID")
 | CommandLine != /\\HP\\|cisco|egy-wds|F\:/i
 | format("https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%25s:%25s&investigate=true&_cid=%25s", field=["aid","TargetProcessId","cid"], as="Tree")

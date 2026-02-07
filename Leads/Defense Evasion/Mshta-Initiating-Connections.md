@@ -26,7 +26,6 @@ Adversaries may abuse mshta.exe to connect to external IPs for C2, payload deliv
 
 ```cql
 event_platform=Win #event_simpleName=ProcessRollup2
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | rename(field="TargetProcessId", as="ContextProcessId")
 | rename(field="FileName", as="ContextBaseFileName")
 | select([ComputerName, FileName, ContextProcessId, UserName, CommandLine, ParentBaseFileName, ParentProcessId])

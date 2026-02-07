@@ -26,7 +26,6 @@ If a domain account is added to an Active Directory administrative group, especi
 
 ```cql
 #event_simpleName = ActiveDirectoryAuditGroupMemberModified
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | rename(field="PerformedOnAccountName", as="PerformedOnGroup")
 | rename(field="PerformedOnAccountDomain", as="Domain")
 | rename(field="PerformedByAccountObjectName", as="PerformedBy")

@@ -30,9 +30,8 @@ Since legitimate system administrators rarely need to invisible specific user ac
 
 ```cql
 defineTable(query={
-#repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
+#event_simpleName = RegSystemConfigValueUpdate
 | format("https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%25s:%25s&investigate=true&_cid=%25s", field=["aid","ContextProcessId","cid"], as="Tree")
-| #event_simpleName = RegSystemConfigValueUpdate
 | RegObjectName = "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\Userlist"
 | formatTime(format="%Y-%m-%d %H:%M:%S", as="RegTimestamp", timezone="Africa/Cairo")
 }, include=[RegTimestamp, ComputerName, Tree, ContextProcessId, RegObjectName, RegValueName, RegOperationType], name="RegSystemConfigValueUpdateT")

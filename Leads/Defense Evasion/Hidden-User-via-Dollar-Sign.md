@@ -3,11 +3,11 @@
 #### MITRE ATT&CK Mapping
 | Tactic | Technique ID | Title |
 | :--- | :--- | :--- |
-| Defense Evasion | [T1136.001](https://attack.mitre.org/techniques/T1136/001/) | Hidden Users |
-| Persistence | [T1136.001](https://attack.mitre.org/techniques/T1136/001/) | Hidden Users |
+| Defense Evasion | [T1564.002 ](https://attack.mitre.org/techniques/T1564/002/) | Hidden Users |
+| Persistence | [T1136.001](https://attack.mitre.org/techniques/T1136/001/) | Local Account |
 
 #### Hypothesis
-Adversaries often seek to create user accounts for persistence, but they attempt to conceal them from casual inspection to evade detection (T1564.002). One common behavioral convention used by attackers is to create a new user account with a trailing dollar sign ($).
+Adversaries often seek to create user accounts for persistence, but they attempt to conceal them from casual inspection to evade detection (T1564.002). One common behavioral convention used by attackers is to create a new user account with a trailing dollar sign.
 In Windows, user accounts ending with a dollar sign are typically machine accounts or inter-service accounts (MSAs/gMSAs). They are not intended for interactive logon, and many administrative tools or scripts filter these accounts from output by default.
 Therefore, we hypothesize that:
 Any user account created that ends with a dollar sign ($) and is not created by a known, authorized system process (like Active Directory components or system setup) is a high-confidence indicator of malicious persistence establishment.

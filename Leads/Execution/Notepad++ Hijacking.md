@@ -1,10 +1,10 @@
 # Notepad++ Updater Hijacking
 
-#### MITRE ATT&CK Technique(s)
-| Technique ID | Title |
-| --- | --- |
-| [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution |
-| [T1071.001](https://attack.mitre.org/techniques/T1071/001/) | Application Layer Protocol: Web Protocols |
+#### MITRE ATT&CK Mapping
+| Tactic | Technique ID | Title |
+| :--- | :--- | :--- |
+| **Execution** | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution |
+| **Command and Control** | [T1071.001](https://attack.mitre.org/techniques/T1071/001/) | Application Layer Protocol: Web Protocols |
 
 #### Hypothesis
 **Lead 1: Suspicious Notepad++ Updater Lineage**

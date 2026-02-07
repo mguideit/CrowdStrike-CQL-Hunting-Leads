@@ -21,7 +21,7 @@ Hunting for impacket-smbexec:
 * 
 
 #### Tags
-`#Hunting`
+`#Hunting` `#Impacket`
 
 ---
 

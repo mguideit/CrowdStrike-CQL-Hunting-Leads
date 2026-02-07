@@ -4,6 +4,7 @@
 | Tactic | Technique ID | Title |
 | :--- | :--- | :--- |
 | Lateral Movement | [T1021.002](https://attack.mitre.org/techniques/T1021/002/) | SMB/Windows Admin Shares |
+| Lateral Movement | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services |
 
 #### Hypothesis
 Adversaries may leverage PsExec or similar remote administration tools to execute binaries on remote systems for lateral movement. This activity often involves writing a PE file to disk on a target machine followed by the creation and execution of a Windows service that launches the uploaded binary. Suspicious activity may be identified by correlating newly written executable files with subsequent service creation events on the same host using the same binary path. Detection of this sequence may indicate unauthorized remote execution or lateral movement attempts.

@@ -1,9 +1,9 @@
 # EDR Startup Hinder
 
-#### MITRE ATT&CK Technique(s)
-| Technique ID | Title |
-| --- | --- |
-| [T1562.001](https://attack.mitre.org/techniques/T1562/001/) | Impair Defenses: Disable or Modify Tools |
+#### MITRE ATT&CK Mapping
+| Tactic | Technique ID | Title |
+| :--- | :--- | :--- |
+| **Defense Evasion** | [T1562.001](https://attack.mitre.org/techniques/T1562/001/) | Impair Defenses: Disable or Modify Tools |
 
 #### Hypothesis
 An adversary may attempt to impair endpoint security controls before initialization by creating or modifying an auto-start Windows service that is registered to a high-priority or uncommon Service Load Order Group. This service executes early in the boot sequence and abuses the Windows Bindlink API to redirect critical System32 DLLs to invalid or unsigned versions, causing EDR/AV user-mode services (PPL) to fail during startup.

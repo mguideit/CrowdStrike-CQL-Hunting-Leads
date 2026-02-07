@@ -4,7 +4,7 @@
 | Tactic | Technique ID | Title |
 | :--- | :--- | :--- |
 | Defense Evasion | [T1027](https://attack.mitre.org/techniques/T1027/) | Obfuscated Files or Information |
-| Execution | [T1059.001]([https://attack.mitre.org/techniques/T1027/](https://attack.mitre.org/techniques/T1059/001/)) | PowerShell |
+| Execution | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell |
 
 #### Hypothesis
 Adversaries obufusctae the powershell commands in order to escape the detection. This query will detect encoded powershell based on the parameters passed during process creation. This query will also work if the PowerShell executable is renamed or tampered with since detection is based solely on a regex of the launch string.
@@ -13,7 +13,7 @@ Adversaries obufusctae the powershell commands in order to escape the detection.
 * **CrowdStrike Falcon**
 
 #### Author
-* **Muhammad Hassoub**
+* 
 
 #### References
 * 
@@ -27,8 +27,6 @@ Adversaries obufusctae the powershell commands in order to escape the detection.
 
 ```cql
 #event_simpleName=ProcessRollup2 event_platform=Win FileName = powershell.exe
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
-| UserName != /itsvc_ansible|bmbahy/i
 | CommandLine=/\s+\-(e\s|eC|enc|encodedcommand|encode)\s+/i
 | ParentBaseFileName != /gc_worker|gfx_win|Code/i
 | format("https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%25s:%25s&investigate=true&_cid=%25s", field=["aid","TargetProcessId","cid"], as="Investigate")

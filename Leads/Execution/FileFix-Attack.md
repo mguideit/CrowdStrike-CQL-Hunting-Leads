@@ -1,4 +1,4 @@
-# Possible FileFix Attack
+# FileFix Attack
 
 #### MITRE ATT&CK Mapping
 | Tactic | Technique ID | Title |

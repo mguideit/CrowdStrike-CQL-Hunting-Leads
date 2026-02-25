@@ -6,9 +6,9 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | Tactic | Count | | Tactic | Count |
 | :--- | :---: | --- | :--- | :---: |
 | 🎟️ Initial Access | **`2`** | 📡 Discovery | `0` |
-| 🚀 Execution | **`9`** | 🏃 Lateral Movement | **`4`** |
+| 🚀 Execution | **`9`** | 🏃 Lateral Movement | **`5`** |
 | ⚓ Persistence | **`8`** | 📦 Collection | **`1`** |
-| 📈 Privilege Escalation | **`2`** | 🚩 Command and Control | **`3`** |
+| 📈 Privilege Escalation | **`2`** | 🚩 Command and Control | **`4`** |
 | 🛡️ Defense Evasion | **`11`** | 📤 Exfiltration | `0` |
 | 🔑 Credential Access | **`2`** | 💥 Impact | `0` |
 
@@ -27,7 +27,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | [T1047](https://attack.mitre.org/techniques/T1047/) | Windows Management Instrumentation | [Impacket-wmiexec-Main](Leads/Execution/Impacket-wmiexec-Main.md) |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | [Impacket Behavior](Leads/Execution/Impacket-Behavior.md) |
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | [Obfuscated PowerShell Activity with High Entropy](Leads/Defense%20Evasion/Obfuscated-PowerShell-Activity-with-High-Entropy.md) |
-| [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | [Possible FileFix Attack](Leads/Execution/Possible-FileFix-Attack.md) |
+| [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | [FileFix Attack](Leads/Execution/FileFix-Attack.md) |
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | [PowerShell via WinRM Connection Received](Leads/Lateral%20Movement/PowerShell-via-WinRM-Connection-Received.md) |
 | [T1204.002](https://attack.mitre.org/techniques/T1204/002/) | Malicious File | [NTLM Hash Leak - CVE-2025-24054](Leads/Execution/NTLM-Hash-Leak---CVE-2025-24054.md) |
 | [T1569.002](https://attack.mitre.org/techniques/T1569/002/) | Service Execution | [Remote Service Creation](Leads/Execution/Remote-Service-Creation.md) |
@@ -80,6 +80,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | :--- | :--- | :--- |
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | [PsExec Style](Leads/Lateral%20Movement/PsExec-Style.md) |
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | [Remote Service creation "Simple Version”](Leads/Lateral%20Movement/Remote-Service-creation-Simple-Version”.md) |
+| [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | [Execution of Tools Delivered via RDP Sessions](Leads/Lateral%20Movement/Execution-of-Tools-Delivered-via-RDP-Sessions.md) |
 | [T1021.002](https://attack.mitre.org/techniques/T1021/002/) | SMB/Windows Admin Shares | [PsExec Style](Leads/Lateral%20Movement/PsExec-Style.md) |
 | [T1021.006](https://attack.mitre.org/techniques/T1021/006/) | Windows Remote Management | [PowerShell via WinRM Connection Received](Leads/Lateral%20Movement/PowerShell-via-WinRM-Connection-Received.md) |
 
@@ -94,6 +95,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | [T1071.001](https://attack.mitre.org/techniques/T1071/001/) | Web Protocols | [Suspicious Notepad++ Updater DNS Request](Leads/Command%20and%20Control/Suspicious-Notepad++-Updater-DNS-Request.md) |
 | [T1071.004](https://attack.mitre.org/techniques/T1071/004/) | DNS | [LOLBins DNS](Leads/Command%20and%20Control/LOLBins-DNS.md) |
 | [T1071.004](https://attack.mitre.org/techniques/T1071/004/) | DNS | [ClickFix Attack](Leads/Initial%20Access/ClickFix-Attack.md) |
+| [T1105](https://attack.mitre.org/techniques/T1105/) | Ingress Tool Transfer | [Execution of Tools Delivered via RDP Sessions](Leads/Lateral%20Movement/Execution-of-Tools-Delivered-via-RDP-Sessions.md) |
 
 ## 📤 Exfiltration
 *No entries yet.*

@@ -43,8 +43,7 @@ defineTable(query={
   | ContextBaseFileName = "explorer.exe"
   | rename(field="TargetFileName", as="FileWrittenOverRDP")
   // Exclusions
-  | FileWrittenOverRDP != /OMS|GYM|EFG|DB_TEAM|Microsoft SQL Server|\\Services\\|\\Lib\\|FIXLogViewer|Sources/i
-  | ComputerName != /KEN-BBO-TEST/i
+  | FileWrittenOverRDP != /BENIGN/i
   | match(table="UserLogonT", field=[ComputerName, AuthenticationId], column=[ComputerName, AuthenticationId], nrows=max)
 }, include=[#event_simpleName, ComputerName, UserName, LogonDomain, UserIsAdmin, RemoteIP, LogonType, ContextBaseFileName, FileWrittenOverRDP, FileName, SHA256HashData, AuthenticationId], name="WrittenT")
 

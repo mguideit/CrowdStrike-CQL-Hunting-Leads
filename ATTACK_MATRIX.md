@@ -80,8 +80,8 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | :--- | :--- | :--- |
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | [PsExec Style](Leads/Lateral%20Movement/PsExec-Style.md) |
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | [Remote Service creation "Simple Version”](Leads/Lateral%20Movement/Remote-Service-creation-Simple-Version”.md) |
-| [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | [RDP Deviation Linked to Post Logon Execution](Leads/Lateral%20Movement/RDP-Deviation-Linked-to-Post-Logon-Execution.md) |
 | [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | [Execution of Tools Delivered via RDP Sessions](Leads/Lateral%20Movement/Execution-of-Tools-Delivered-via-RDP-Sessions.md) |
+| [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | [RDP Baseline Deviation Chained to Post-Logon Execution](Leads/Lateral%20Movement/RDP-Baseline-Deviation-Chained-to-Post-Logon-Execution.md) |
 | [T1021.002](https://attack.mitre.org/techniques/T1021/002/) | SMB/Windows Admin Shares | [PsExec Style](Leads/Lateral%20Movement/PsExec-Style.md) |
 | [T1021.006](https://attack.mitre.org/techniques/T1021/006/) | Windows Remote Management | [PowerShell via WinRM Connection Received](Leads/Lateral%20Movement/PowerShell-via-WinRM-Connection-Received.md) |
 

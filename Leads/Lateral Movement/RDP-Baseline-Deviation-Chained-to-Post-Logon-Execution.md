@@ -38,7 +38,7 @@ An adversary who obtained valid credentials via phishing, credential dumping, or
   #event_simpleName = UserLogon
   | LogonType = 10
   | RemoteIP = *
-  | !match(file="LoginLast30Days", field=[UserName])
+  | !match(file="LoginLast30Days", field=[ComputerName,UserName])
   | formatTime(format="%Y-%m-%d %H:%M:%S", timezone="Africa/Cairo", as="LogonTimestamp")
 }, include=[*], name="LoginLastDay", start=1d, end=now)
 

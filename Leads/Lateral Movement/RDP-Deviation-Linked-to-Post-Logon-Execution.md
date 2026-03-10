@@ -1,4 +1,4 @@
-# RDP Deviation Linked to Post Logon Execution
+# RDP Baseline Deviation Chained to Post-Logon Execution
 
 #### MITRE ATT&CK Mapping
 | Tactic | Technique ID | Title |

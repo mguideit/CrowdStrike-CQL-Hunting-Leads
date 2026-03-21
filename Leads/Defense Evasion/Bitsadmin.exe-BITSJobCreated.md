@@ -6,15 +6,9 @@
 | Defense Evasion | [T1197](https://attack.mitre.org/techniques/T1197/) | BITS Jobs |
 
 #### Hypothesis
-==========
-Hypothesis
-==========
 
 Attackers are creating Background Intelligent Transfer Service (BITS) jobs to stage, download, or exfiltrate files, potentially for persistent access, command and control, or data manipulation. Unusual BITS job creations, particularly by non-system users and for non-browser-related files, warrant investigation as they could indicate malicious activity.
 
-==========
-Query Logic
-==========
 
 1- #event_simpleName = BITSJobCreated: Focuses on events where a BITS job is created—key to detecting T1197 activity.
 
@@ -41,7 +35,6 @@ Query Logic
 ```cql
 defineTable(query={
 #event_simpleName = BITSJobCreated
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | UserName != "" UserName != /SYSTEM|\$/i UserName = *
 | TargetFileName != /\\AppData\\Local|chrome|edge|mozilla|ccmsetup|\\HP/i
 | rename(field="TargetFileName", as="DownloadedFile")
@@ -49,7 +42,7 @@ defineTable(query={
 | format("https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%25s:%25s&investigate=true&_cid=%25s", field=["aid","RpcClientProcessId","cid"], as="Tree")
 }, include=[BITSJobTimeStamp, ComputerName, RpcClientProcessId, UserName, Tree, DownloadedFile], name="BITSJobCreatedT")
 | #event_simpleName = ProcessRollup2
-| match(table="BITSJobCreatedT", field=[ComputerName, TargetProcessId], column=[ComputerName, RpcClientProcessId])
+| match(table="BITSJobCreatedT", field=[ComputerName, TargetProcessId], column=[ComputerName, RpcClientProcessId], nrows=max)
 | rename(field="FileName", as="DownloaderProcess")
 | rename(field="ParentBaseFileName", as="DownloaderProcessParent")
 | rename(field="CommandLine", as="DownloaderProcessCommandLine")

@@ -26,7 +26,6 @@ Adversaries may abusecertutil.exe, a trusted Windows utility, to download malici
 
 ```cql
 event_platform=Win #event_simpleName=/ProcessRollup2|SyntheticProcessRollup2/i FileName = certutil.exe
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | CommandLine = /http/i
 // Exclusions
 | ParentBaseFileName != /HTTPDebuggerSvc/i

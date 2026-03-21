@@ -6,10 +6,10 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | Tactic | Count | | Tactic | Count |
 | :--- | :---: | --- | :--- | :---: |
 | 🎟️ Initial Access | **`2`** | 📡 Discovery | `0` |
-| 🚀 Execution | **`9`** | 🏃 Lateral Movement | **`6`** |
+| 🚀 Execution | **`10`** | 🏃 Lateral Movement | **`8`** |
 | ⚓ Persistence | **`8`** | 📦 Collection | **`1`** |
-| 📈 Privilege Escalation | **`2`** | 🚩 Command and Control | **`4`** |
-| 🛡️ Defense Evasion | **`11`** | 📤 Exfiltration | `0` |
+| 📈 Privilege Escalation | **`2`** | 🚩 Command and Control | **`5`** |
+| 🛡️ Defense Evasion | **`22`** | 📤 Exfiltration | `0` |
 | 🔑 Credential Access | **`2`** | 💥 Impact | `0` |
 
 ---
@@ -25,6 +25,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | :--- | :--- | :--- |
 | [T1021.002](https://attack.mitre.org/techniques/T1021/002/) | SMB/Windows Admin Shares | [Impacket-smbexec-Main](Leads/Execution/Impacket-smbexec-Main.md) |
 | [T1047](https://attack.mitre.org/techniques/T1047/) | Windows Management Instrumentation | [Impacket-wmiexec-Main](Leads/Execution/Impacket-wmiexec-Main.md) |
+| [T1053.005](https://attack.mitre.org/techniques/T1053/005/) | Scheduled Task | [Schtasks.exe Used to Force a Reboot](Leads/Execution/Schtasks.exe-Used-to-Force-a-Reboot.md) |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | [Impacket Behavior](Leads/Execution/Impacket-Behavior.md) |
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | [Obfuscated PowerShell Activity with High Entropy](Leads/Defense%20Evasion/Obfuscated-PowerShell-Activity-with-High-Entropy.md) |
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | [FileFix Attack](Leads/Execution/FileFix-Attack.md) |
@@ -55,14 +56,25 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | Technique ID | Title | Query / Lead |
 | :--- | :--- | :--- |
 | [T1027](https://attack.mitre.org/techniques/T1027/) | Obfuscated Files or Information | [Obfuscated PowerShell Activity with High Entropy](Leads/Defense%20Evasion/Obfuscated-PowerShell-Activity-with-High-Entropy.md) |
+| [T1127.001](https://attack.mitre.org/techniques/T1127/001/) | MSBuild | [Rare MsBuild Execution](Leads/Defense%20Evasion/Rare-MsBuild-Execution.md) |
+| [T1127.001](https://attack.mitre.org/techniques/T1127/001/) | MSBuild | [MSBuild Custom Logger DLL Abuse](Leads/Defense%20Evasion/MSBuild-Custom-Logger-DLL-Abuse.md) |
+| [T1140](https://attack.mitre.org/techniques/T1140/) | Deobfuscate/Decode Files or Information | [Certutil BASE64 Encoding/ Decoding](Leads/Defense%20Evasion/Certutil-BASE64-Encoding-Decoding.md) |
+| [T1197](https://attack.mitre.org/techniques/T1197/) | BITS Jobs | [Bitsadmin.exe - Process Lineage](Leads/Defense%20Evasion/Bitsadmin.exe---Process-Lineage.md) |
+| [T1197](https://attack.mitre.org/techniques/T1197/) | BITS Jobs | [Bitsadmin.exe BITSJobCreated](Leads/Defense%20Evasion/Bitsadmin.exe-BITSJobCreated.md) |
 | [T1202](https://attack.mitre.org/techniques/T1202/) | Indirect Command Execution | [ClickFix Attack](Leads/Initial%20Access/ClickFix-Attack.md) |
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | [Suspicious Process Tree](Leads/Defense%20Evasion/Suspicious-Process-Tree.md) |
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | [Suspicious Notepad++ Updater Lineage](Leads/Defense%20Evasion/Suspicious-Notepad++-Updater-Lineage.md) |
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | [Remote PowerShell wsmprovhost Spawns Process](Leads/Defense%20Evasion/Remote-PowerShell-wsmprovhost-Spawns-Process.md) |
+| [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | [Remote .hta Execution via mshta.exe](Leads/Defense%20Evasion/Remote-.hta-Execution-via-mshta.exe.md) |
 | [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | [Rare mshta.exe Execution](Leads/Defense%20Evasion/Rare-mshta.exe-Execution.md) |
 | [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | [Mshta Initiating Connections](Leads/Defense%20Evasion/Mshta-Initiating-Connections.md) |
+| [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | [Hidden Mshta Windows](Leads/Defense%20Evasion/Hidden-Mshta-Windows.md) |
+| [T1218.007](https://attack.mitre.org/techniques/T1218/007/) | Msiexec | [Msiexec.exe Remote Downloads and Execution](Leads/Defense%20Evasion/Msiexec.exe-Remote-Downloads-and-Execution.md) |
+| [T1218.007](https://attack.mitre.org/techniques/T1218/007/) | Msiexec | [MSIExec DLLRegisterServer](Leads/Defense%20Evasion/MSIExec-DLLRegisterServer.md) |
 | [T1218.010](https://attack.mitre.org/techniques/T1218/010/) | Regsvr32 | [Regsvr32 scrobj.dll Scriptlet Remote Execution](Leads/Defense%20Evasion/Regsvr32-scrobjdll-Scriptlet.md) |
+| [T1218.011](https://attack.mitre.org/techniques/T1218/011/) | Rundll32 | [Rundll32 with Suspicious Process Lineage](Leads/Defense%20Evasion/Rundll32-with-Suspicious-Process-Lineage.md) |
 | [T1218.011](https://attack.mitre.org/techniques/T1218/011/) | Rundll32 | [Suspicious Rundll32.exe Execution via Scheduled Tasks](Leads/Defense%20Evasion/Suspicious-Rundll32.exe-Execution-via-Scheduled-Tasks.md) |
+| [T1220](https://attack.mitre.org/techniques/T1220/) | XSL Script Processing | [WMIC  Malicious Code Execution via /FORMAT XSL](Leads/Defense%20Evasion/WMIC--Malicious-Code-Execution-via-FORMAT-XSL.md) |
 | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control | [UAC Bypass Using COM Objects](Leads/Defense%20Evasion/UAC-Bypass-Using-COM-Objects.md) |
 | [T1564.002](https://attack.mitre.org/techniques/T1564/002/) | Hidden Users | [Hidden User via SpecialAccounts](Leads/Defense%20Evasion/Hidden-User-via-SpecialAccounts.md) |
 
@@ -83,6 +95,8 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | [Execution of Tools Delivered via RDP Sessions](Leads/Lateral%20Movement/Execution-of-Tools-Delivered-via-RDP-Sessions.md) |
 | [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | [RDP Baseline Deviation Chained to Post-Logon Execution](Leads/Lateral%20Movement/RDP-Baseline-Deviation-Chained-to-Post-Logon-Execution.md) |
 | [T1021.002](https://attack.mitre.org/techniques/T1021/002/) | SMB/Windows Admin Shares | [PsExec Style](Leads/Lateral%20Movement/PsExec-Style.md) |
+| [T1021.006](https://attack.mitre.org/techniques/T1021/006/) | Windows Remote Management | [Lateral Movement via WinRM/Winrs -[Source]](Leads/Lateral%20Movement/Lateral-Movement-via-WinRMWinrs--[Source].md) |
+| [T1021.006](https://attack.mitre.org/techniques/T1021/006/) | Windows Remote Management | [Lateral Movement via WinRM/Winrs [Destination]](Leads/Lateral%20Movement/Lateral-Movement-via-WinRMWinrs-[Destination].md) |
 | [T1021.006](https://attack.mitre.org/techniques/T1021/006/) | Windows Remote Management | [PowerShell via WinRM Connection Received](Leads/Lateral%20Movement/PowerShell-via-WinRM-Connection-Received.md) |
 
 ## 📦 Collection
@@ -96,6 +110,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | [T1071.001](https://attack.mitre.org/techniques/T1071/001/) | Web Protocols | [Suspicious Notepad++ Updater DNS Request](Leads/Command%20and%20Control/Suspicious-Notepad++-Updater-DNS-Request.md) |
 | [T1071.004](https://attack.mitre.org/techniques/T1071/004/) | DNS | [LOLBins DNS](Leads/Command%20and%20Control/LOLBins-DNS.md) |
 | [T1071.004](https://attack.mitre.org/techniques/T1071/004/) | DNS | [ClickFix Attack](Leads/Initial%20Access/ClickFix-Attack.md) |
+| [T1105](https://attack.mitre.org/techniques/T1105/) | Ingress Tool Transfer | [Certutil Downloading](Leads/Command%20and%20Control/Certutil-Downloading.md) |
 | [T1105](https://attack.mitre.org/techniques/T1105/) | Ingress Tool Transfer | [Execution of Tools Delivered via RDP Sessions](Leads/Lateral%20Movement/Execution-of-Tools-Delivered-via-RDP-Sessions.md) |
 
 ## 📤 Exfiltration

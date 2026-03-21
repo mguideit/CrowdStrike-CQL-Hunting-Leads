@@ -18,7 +18,7 @@ An adversary may be attempting to evade detection by using Mshta.exe and leverag
 * 
 
 #### Tags
-`#Hunting`
+`#Hunting` `#LOLBins`
 
 ---
 
@@ -26,9 +26,7 @@ An adversary may be attempting to evade detection by using Mshta.exe and leverag
 
 ```cql
 event_platform=Win #event_simpleName=ProcessRollup2
-| #repo.cid != 77bb5e6ffad446f491aad89de6fa8d38
 | FileName = "mshta.exe"
-// | CommandLine = /moveto\s?\(|resizeto\s?\(/i
 | CommandLine = /moveto|resizeto/i
 | formatTime(format="%m/%d/%Y %H:%M:%S %a", as="TimeStamp", timezone="Africa/Cairo")
 | format("https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%25s:%25s&investigate=true&_cid=%25s", field=["aid","ContextProcessId","cid"], as="Tree")

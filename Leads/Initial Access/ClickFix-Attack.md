@@ -49,6 +49,7 @@ If adversaries are using the Windows nslookup utility via social engineering lur
 | ParentBaseFileName = "explorer.exe"
 // Exclusions
 | CommandLine != "\\??\\C:\\windows\\system32\\conhost.exe 0xffffffff -ForceV1"
+| CommandLine != "\"C:\\windows\\system32\\nslookup.exe\" "
 | format("[Tree](https://falcon.us-2.crowdstrike.com/graphs/process-explorer/tree?id=pid:%s:%s&investigate=true&_cid=%s )", field=["aid","TargetProcessId","cid"], as="Tree")
 | groupBy([ComputerName, UserName, Tree, FileName, CommandLine])
 ```

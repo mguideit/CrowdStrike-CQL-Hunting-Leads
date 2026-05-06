@@ -10,7 +10,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | ⚓ Persistence | **`9`** | 📦 Collection | **`1`** |
 | 📈 Privilege Escalation | **`3`** | 🚩 Command and Control | **`5`** |
 | 🛡️ Defense Evasion | **`22`** | 📤 Exfiltration | `0` |
-| 🔑 Credential Access | **`2`** | 💥 Impact | `0` |
+| 🔑 Credential Access | **`3`** | 💥 Impact | `0` |
 
 ---
 
@@ -83,6 +83,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 ## 🔑 Credential Access
 | Technique ID | Title | Query / Lead |
 | :--- | :--- | :--- |
+| [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | [Process Memory Dumping via System Utilities](Leads/Credential%20Access/Process-Memory-Dumping-via-System-Utilities.md) |
 | [T1003.006](https://attack.mitre.org/techniques/T1003/006/) | DCSync | [Possible DCSync Attack](Leads/Credential%20Access/Possible-DCSync-Attack.md) |
 | [T1552.001](https://attack.mitre.org/techniques/T1552/001/) | Credentials In Files | [Suspicious Credential File Search](Leads/Credential%20Access/Suspicious-Credential-File-Search.md) |
 

@@ -1,4 +1,4 @@
-# [Lead Name]
+# Process Memory Dumping via System Utilities
 
 #### MITRE ATT&CK Mapping
 | Tactic | Technique ID | Title |

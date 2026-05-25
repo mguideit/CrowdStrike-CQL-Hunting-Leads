@@ -5,12 +5,12 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 ## 📊 Coverage Summary
 | Tactic | Count | | Tactic | Count |
 | :--- | :---: | --- | :--- | :---: |
-| 🎟️ Initial Access | **`2`** | 📡 Discovery | `0` |
+| 🎟️ Initial Access | **`3`** | 📡 Discovery | `0` |
 | 🚀 Execution | **`10`** | 🏃 Lateral Movement | **`8`** |
 | ⚓ Persistence | **`9`** | 📦 Collection | **`1`** |
 | 📈 Privilege Escalation | **`3`** | 🚩 Command and Control | **`5`** |
-| 🛡️ Defense Evasion | **`22`** | 📤 Exfiltration | `0` |
-| 🔑 Credential Access | **`3`** | 💥 Impact | `0` |
+| 🛡️ Defense Evasion | **`22`** | 📤 Exfiltration | **`1`** |
+| 🔑 Credential Access | **`4`** | 💥 Impact | `0` |
 
 ---
 
@@ -18,6 +18,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | Technique ID | Title | Query / Lead |
 | :--- | :--- | :--- |
 | [T1189](https://attack.mitre.org/techniques/T1189/) | Drive-by Compromise | [ClickFix Attack](Leads/Initial%20Access/ClickFix-Attack.md) |
+| [T1195](https://attack.mitre.org/techniques/T1195/) | Compromise Software Dependencies and Development Tools | [Shai-Hulud Nx-Console](Leads/Initial%20Access/Shai-Hulud-Nx-Console.md) |
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | [FileFix Attack](Leads/Execution/FileFix-Attack.md) |
 
 ## 🚀 Execution
@@ -86,6 +87,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | [Process Memory Dumping via System Utilities](Leads/Credential%20Access/Process-Memory-Dumping-via-System-Utilities.md) |
 | [T1003.006](https://attack.mitre.org/techniques/T1003/006/) | DCSync | [Possible DCSync Attack](Leads/Credential%20Access/Possible-DCSync-Attack.md) |
 | [T1552.001](https://attack.mitre.org/techniques/T1552/001/) | Credentials In Files | [Suspicious Credential File Search](Leads/Credential%20Access/Suspicious-Credential-File-Search.md) |
+| [T1555](https://attack.mitre.org/techniques/T1555/) | Credentials from Password Stores | [Shai-Hulud Nx-Console](Leads/Initial%20Access/Shai-Hulud-Nx-Console.md) |
 
 ## 📡 Discovery
 *No entries yet.*
@@ -117,7 +119,9 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | [T1105](https://attack.mitre.org/techniques/T1105/) | Ingress Tool Transfer | [Execution of Tools Delivered via RDP Sessions](Leads/Lateral%20Movement/Execution-of-Tools-Delivered-via-RDP-Sessions.md) |
 
 ## 📤 Exfiltration
-*No entries yet.*
+| Technique ID | Title | Query / Lead |
+| :--- | :--- | :--- |
+| [T1041](https://attack.mitre.org/techniques/T1041/) | Exfiltration Over C2 Channel | [Shai-Hulud Nx-Console](Leads/Initial%20Access/Shai-Hulud-Nx-Console.md) |
 
 ## 💥 Impact
 *No entries yet.*

@@ -8,7 +8,7 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 | 🎟️ Initial Access | **`3`** | 📡 Discovery | `0` |
 | 🚀 Execution | **`10`** | 🏃 Lateral Movement | **`8`** |
 | ⚓ Persistence | **`9`** | 📦 Collection | **`1`** |
-| 📈 Privilege Escalation | **`3`** | 🚩 Command and Control | **`5`** |
+| 📈 Privilege Escalation | **`5`** | 🚩 Command and Control | **`5`** |
 | 🛡️ Defense Evasion | **`22`** | 📤 Exfiltration | **`1`** |
 | 🔑 Credential Access | **`4`** | 💥 Impact | `0` |
 
@@ -51,8 +51,10 @@ This matrix provides a centralized view of all hunting leads. It is automaticall
 ## 📈 Privilege Escalation
 | Technique ID | Title | Query / Lead |
 | :--- | :--- | :--- |
+| [T1068](https://attack.mitre.org/techniques/T1068/) | Exploitation for Privilege Escalation | [FalconFlank](Leads/Privilege%20Escalation/FalconFlank.md) |
 | [T1543.003](https://attack.mitre.org/techniques/T1543/003/) | Windows Service | [Windows Service Created with Suspicious Service Path](Leads/Persistence/Windows-Service-Created-with-Suspicious-Service-Path.md) |
 | [T1546.012](https://attack.mitre.org/techniques/T1546/012/) | Image File Execution Options Injection | [IFEO Injection](Leads/Persistence/IFEO-Injection.md) |
+| [T1548](https://attack.mitre.org/techniques/T1548/) | Abuse Elevation Control Mechanism | [FalconFlank](Leads/Privilege%20Escalation/FalconFlank.md) |
 | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control | [UAC Bypass Using COM Objects](Leads/Defense%20Evasion/UAC-Bypass-Using-COM-Objects.md) |
 
 ## 🛡️ Defense Evasion
